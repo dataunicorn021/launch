@@ -253,18 +253,18 @@ with tab2:
         st.plotly_chart(fig_donut_chart, use_container_width=True)
 
     st.caption("""
-                Insight: The majority of our customers are on the "Lite" plan.
-            
-                Implication: While the "Lite" plan may be popular due to its affordability, there's an opportunity to increase revenue by encouraging these customers to upgrade to the more feature-rich "Core" plan.
-            
-                Suggestions fo Upselling "Lite" Plan Customers to "Core" Plan:
-                - Personalized Recommendations: Implement personalized recommendation engines that analyze customer usage patterns. Use these insights to suggest the "Core" plan to "Lite" plan customers who are approaching their volume limits or who are showing interest in advanced features.
-                - Limited-Time Promotions: Offer time-limited promotions or discounts to "Lite" plan customers who upgrade to the "Core" plan. This can create a sense of urgency and incentivize them to take action.
-                - Trial Periods: Offer "Lite" plan customers a trial period of the "Core" plan, allowing them to experience the additional features firsthand. During the trial, provide support and guidance to ensure they make the most of the new features.
-                - Segmented Email Campaigns: Segment your email marketing campaigns based on customer behavior. Send targeted emails to "Lite" plan customers, focusing on the benefits that matter most to them. For example, if they frequently approach their volume limits, emphasize the increased limits of the "Core" plan.
-                - Customer Support Outreach: Proactively reach out to "Lite" plan customers with personalized recommendations based on their usage patterns. Offer to discuss their specific needs and how upgrading to the "Core" plan can address those needs.
-                - Feedback and Listening: Continuously collect feedback from "Lite" plan customers. Use their input to improve the "Core" plan and address any pain points or concerns they may have about upgrading.
-                """)
+        Insight: The majority of our customers are on the "Lite" plan.
+    
+        Implication: While the "Lite" plan may be popular due to its affordability, there's an opportunity to increase revenue by encouraging these customers to upgrade to the more feature-rich "Core" plan.
+    
+        Suggestions fo Upselling "Lite" Plan Customers to "Core" Plan:
+        - Personalized Recommendations: Implement personalized recommendation engines that analyze customer usage patterns. Use these insights to suggest the "Core" plan to "Lite" plan customers who are approaching their volume limits or who are showing interest in advanced features.
+        - Limited-Time Promotions: Offer time-limited promotions or discounts to "Lite" plan customers who upgrade to the "Core" plan. This can create a sense of urgency and incentivize them to take action.
+        - Trial Periods: Offer "Lite" plan customers a trial period of the "Core" plan, allowing them to experience the additional features firsthand. During the trial, provide support and guidance to ensure they make the most of the new features.
+        - Segmented Email Campaigns: Segment your email marketing campaigns based on customer behavior. Send targeted emails to "Lite" plan customers, focusing on the benefits that matter most to them. For example, if they frequently approach their volume limits, emphasize the increased limits of the "Core" plan.
+        - Customer Support Outreach: Proactively reach out to "Lite" plan customers with personalized recommendations based on their usage patterns. Offer to discuss their specific needs and how upgrading to the "Core" plan can address those needs.
+        - Feedback and Listening: Continuously collect feedback from "Lite" plan customers. Use their input to improve the "Core" plan and address any pain points or concerns they may have about upgrading.
+        """)
 
 ##### MONTHS
 
