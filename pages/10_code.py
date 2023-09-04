@@ -160,7 +160,7 @@ df = pd.DataFrame(data)
 ###### GRAPHS ######
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
-    ['Total Number of Customers', 'Distribution of Plans', 'Sign-ups per Month',
+    ['Introductions', 'Distribution of Plans', 'Sign-ups per Month',
         'Distribution of Affiliate Status', 'Churn Score', 'Upsell Opportunities']
 )
 
@@ -168,15 +168,19 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(
 
 with tab1:
     # Display the total number of customers as a big number
-    st.subheader("Total Number of Customers")
+    st.subheader("Introduction")
 
+    st.caption("Welcome to the Customer Segmentation Analysis. In this section, we'll explore how our customers are segmented based on their subscription plans, affiliate status, and other relevant factors. By understanding these segments, we can tailor our efforts to reduce churn, identify upselling opportunities, and enhance our overall customer experience.")
+    st.caption("Have you ever wondered how understanding our customer segments can help us reduce churn and improve our services?")
+    st.caption("We'll start by examining the total number of customers, followed by a breakdown of customer plans and distribution.")
     st.caption("In this initial analysis tab, focus is on the critical business metric of the total number of \
                customers. The large, prominent number provides an immediate overview of the customer base, \
                making it easy to gauge the company's reach. It's important to note that, for the purpose of \
                this assignment, monthly data was not generated. However, in a real-world business context, \
                tracking the percentage change in customer count compared to the previous period would be a \
                valuable addition to understand growth trends.")
-    
+    st.markdown("")
+    st.markdown("##### Total Number of Customers")
 
     # Get the total number of customers
     total_customers = len(df)
@@ -206,6 +210,9 @@ with tab1:
     # Display the Plotly figure in Streamlit
     st.plotly_chart(fig)
 
+    st.markdown("")
+    st.markdown("##### List of Customers")
+    st.markdown("")
     st.dataframe(df['Company'], height=1100)
 
 ##### PLANS
