@@ -412,7 +412,7 @@ with tab6:
     df = df.sort_values(by='Percentage of Plan Used', ascending=False)
 
     # Define a color for the bars
-    bar_color = '#646cfc'
+    bar_color = '#1e90ff'
 
     # Create a Streamlit container
     st.subheader("Percentage of Plan Used")
