@@ -167,7 +167,7 @@ with tab1:
         y=0.5,
         showarrow=False,
         font_size=60,  # Increase font size for a bigger number
-        font_color="rgb(100,108,252)",  # Plotly's default blueish-purple color
+        font_color="rgb(30,144,255)",  # Plotly's default blueish-purple color
         xanchor='center',  # Center the text horizontally
         yanchor='middle',  # Center the text vertically
     )
