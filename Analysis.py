@@ -297,6 +297,8 @@ with tab4:
 ##### Churn
 
 with tab5:
+    st.subheader("Number of Customers in Each Churn Score Range")
+    st.caption("In this section, we explore strategies aimed at reducing churn to enhance customer retention and satisfaction. We begin by analyzing customer Churn Scores, grouping them into categories for a clearer understanding of churn dynamics, and then explore the key parameters that influence Churn Scores, providing valuable insights for informed decision-making.")
     # Define custom bin ranges and labels
     bin_ranges = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     bin_labels = [f"{bin_start}-{bin_end}" for bin_start, bin_end in zip(bin_ranges[:-1], bin_ranges[1:])]
@@ -312,7 +314,6 @@ with tab5:
     value_counts = value_counts.sort_values(by='Churn Score Range')
 
     # Display a column chart
-    st.subheader("Number of Customers in Each Churn Score Range")
     fig = px.bar(value_counts, x='Churn Score Range', y='Count', labels={'Count': 'Frequency'})
     st.plotly_chart(fig)
 
@@ -369,7 +370,10 @@ with tab5:
 
     ##### Churn score breakdown
     st.subheader("Churn Score Parameters")
-    st.caption('The Churn Score parameter in this analysis is determined by considering two primary factors for simplicity: Usage Frequency and Response Rate. These metrics offer valuable insights into customer churn, shedding light on customer engagement and retention. However, for a more comprehensive analysis, we may explore additional parameters such as customer demographics, engagement history, transaction behavior, customer support interactions, and even if the customer upgraded to a higher plan already. These supplementary factors can provide a deeper understanding of customer behavior and enhance our predictive capabilities.')
+    st.caption('The Churn Score parameter in this analysis is calculated based on two key factors for \
+               simplicity: Usage Frequency and Response Rate. These metrics are used to assess customer churn, providing \
+               insights into customer engagement and retention, though other parameters such as customer demographics, engagement history, \
+               transaction behavior, and customer support interactions could also be considered for a more comprehensive analysis.')
     # Create a DataFrame with values for Usage Frequency and Response Rate
     data = {
         'Category': ['Usage Frequency', 'Response Rate'],
