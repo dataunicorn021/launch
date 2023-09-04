@@ -412,7 +412,7 @@ with tab6:
     st.caption("While the dataset, created for simplicity, lacks monthly volume data, a graph illustrating \
                customers nearing their plan's maximum value could offer valuable insights for upselling \
                opportunities. It's important to note that, due to time constraints, the originally planned \
-               slide selector for percentage ranges was not included.")
+               slide selector for percentage ranges and drop-down menu for filtering customers per i.e. Plan were not included.")
 
     # Loop through the DataFrame to display horizontal bars and percentages
     for index, row in df.iterrows():
