@@ -211,23 +211,33 @@ with tab1:
 ##### PLANS
 
 with tab2: 
-    # Count the distribution of plans for the bar chart
+     # Count the distribution of plans for the bar chart
     plan_counts_bar = df['Plan'].value_counts().reset_index()
     plan_counts_bar.columns = ['Plan', 'Count']
 
+    # Specify the custom order for plans
+    custom_order = ['Lite', 'Core', 'Pro']
+
+    # Change the order of plans based on the custom order
+    plan_counts_bar['Plan'] = pd.Categorical(plan_counts_bar['Plan'], categories=custom_order, ordered=True)
+    plan_counts_bar = plan_counts_bar.sort_values('Plan')
+
     # Count the distribution of plans for the donut chart
-    plan_counts_donut = df['Plan'].value_counts()
+    plan_counts_donut = df['Plan'].value_counts().reindex(custom_order)
     st.subheader("Distribution of Plans")
     st.caption("This section visualizes the distribution of customer plans using both a bar chart and a donut \
-               chart. The bar chart displays the number of customers in each plan category, with different colors \
-               representing each plan. On the other hand, the donut chart provides a concise overview of the \
-               plan distribution with percentages. Both charts have a clean white background for clarity.")
+            chart. The bar chart displays the number of customers in each plan category, with different colors \
+            representing each plan. On the other hand, the donut chart provides a concise overview of the \
+            plan distribution with percentages. Both charts have a clean white background for clarity.")
     # Create columns
     col1, col2 = st.columns(2)
 
+    # Extract the colors used in the bar chart
+    bar_chart_colors = px.colors.qualitative.Plotly[:len(custom_order)]
+
     with col1:
         # Create a Plotly bar chart for Plan distribution
-        fig_bar_chart = px.bar(plan_counts_bar, x='Plan', y='Count', color='Plan')
+        fig_bar_chart = px.bar(plan_counts_bar, x='Plan', y='Count', color='Plan', color_discrete_sequence=bar_chart_colors)
         # Update the layout to set the background color to white
         fig_bar_chart.update_layout(
             plot_bgcolor='white',
@@ -235,9 +245,26 @@ with tab2:
         st.plotly_chart(fig_bar_chart, use_container_width=True)
 
     with col2:
-        # Create a donut chart for Plan distribution
-        fig_donut_chart = px.pie(names=plan_counts_donut.index, values=plan_counts_donut.values, hole=0.5)
+        # Create a donut chart for Plan distribution with the same colors and custom order
+        fig_donut_chart = px.pie(names=custom_order, values=plan_counts_donut.values, hole=0.5, color=custom_order, color_discrete_sequence=bar_chart_colors)
+        # Set the legend title and order
+        fig_donut_chart.update_traces(marker=dict(colors=bar_chart_colors))
+        fig_donut_chart.update_layout(legend_title_text='Plan')
         st.plotly_chart(fig_donut_chart, use_container_width=True)
+
+    st.caption("""
+    Insight: The majority of our customers are on the "Lite" plan.
+
+    Implication: While the "Lite" plan may be popular due to its affordability, there's an opportunity to increase revenue by encouraging these customers to upgrade to the more feature-rich "Core" plan.
+
+    Suggestions fo Upselling "Lite" Plan Customers to "Core" Plan:
+    - Personalized Recommendations: Implement personalized recommendation engines that analyze customer usage patterns. Use these insights to suggest the "Core" plan to "Lite" plan customers who are approaching their volume limits or who are showing interest in advanced features.
+    - Limited-Time Promotions: Offer time-limited promotions or discounts to "Lite" plan customers who upgrade to the "Core" plan. This can create a sense of urgency and incentivize them to take action.
+    - Trial Periods: Offer "Lite" plan customers a trial period of the "Core" plan, allowing them to experience the additional features firsthand. During the trial, provide support and guidance to ensure they make the most of the new features.
+    - Segmented Email Campaigns: Segment your email marketing campaigns based on customer behavior. Send targeted emails to "Lite" plan customers, focusing on the benefits that matter most to them. For example, if they frequently approach their volume limits, emphasize the increased limits of the "Core" plan.
+    - Customer Support Outreach: Proactively reach out to "Lite" plan customers with personalized recommendations based on their usage patterns. Offer to discuss their specific needs and how upgrading to the "Core" plan can address those needs.
+    - Feedback and Listening: Continuously collect feedback from "Lite" plan customers. Use their input to improve the "Core" plan and address any pain points or concerns they may have about upgrading.
+    """)
 
 ##### MONTHS
 
