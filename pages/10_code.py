@@ -252,7 +252,7 @@ with tab2:
         fig_donut_chart.update_layout(legend_title_text='Plan')
         st.plotly_chart(fig_donut_chart, use_container_width=True)
 
-    st.caption("""
+    st.caption(""
     Insight: The majority of our customers are on the "Lite" plan.
 
     Implication: While the "Lite" plan may be popular due to its affordability, there's an opportunity to increase revenue by encouraging these customers to upgrade to the more feature-rich "Core" plan.
@@ -264,7 +264,7 @@ with tab2:
     - Segmented Email Campaigns: Segment your email marketing campaigns based on customer behavior. Send targeted emails to "Lite" plan customers, focusing on the benefits that matter most to them. For example, if they frequently approach their volume limits, emphasize the increased limits of the "Core" plan.
     - Customer Support Outreach: Proactively reach out to "Lite" plan customers with personalized recommendations based on their usage patterns. Offer to discuss their specific needs and how upgrading to the "Core" plan can address those needs.
     - Feedback and Listening: Continuously collect feedback from "Lite" plan customers. Use their input to improve the "Core" plan and address any pain points or concerns they may have about upgrading.
-    """)
+    "")
 
 ##### MONTHS
 
