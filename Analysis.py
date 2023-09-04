@@ -421,7 +421,9 @@ with tab6:
                customers nearing their plan's maximum value could offer valuable insights for upselling \
                opportunities. It's important to note that, due to time constraints, the originally planned \
                slide selector for percentage ranges and drop-down menu for filtering customers per i.e. Plan were not included.")
-
+    st.markdown("")
+    st.markdown("")
+    
     # Loop through the DataFrame to display horizontal bars and percentages
     for index, row in df.iterrows():
         company_name = row['Company']
