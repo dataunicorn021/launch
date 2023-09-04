@@ -389,10 +389,7 @@ with tab5:
 
     ##### Churn score breakdown
     st.subheader("Churn Score Parameters")
-    st.caption('The Churn Score parameter in this analysis is calculated based on two key factors for \
-               simplicity: Usage Frequency and Response Rate. These metrics are used to assess customer churn, providing \
-               insights into customer engagement and retention, though other parameters such as customer demographics, engagement history, \
-               transaction behavior, and customer support interactions could also be considered for a more comprehensive analysis.')
+    st.caption('The Churn Score parameter in this analysis is determined by considering two primary factors for simplicity: Usage Frequency and Response Rate. These metrics offer valuable insights into customer churn, shedding light on customer engagement and retention. However, for a more comprehensive analysis, we may explore additional parameters such as customer demographics, engagement history, transaction behavior, customer support interactions, and even if the customer upgraded to a higher plan already. These supplementary factors can provide a deeper understanding of customer behavior and enhance our predictive capabilities.')
     # Create a DataFrame with values for Usage Frequency and Response Rate
     data = {
         'Category': ['Usage Frequency', 'Response Rate'],
